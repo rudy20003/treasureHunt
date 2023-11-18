@@ -1,84 +1,23 @@
-"use client";
-import { signIn } from "next-auth/react";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import Logo from "./_components/Logo";
-
-export default function page() {
-  const error = useSearchParams().get("error");
-  const [isLoginPage, setIsLoginPage] = useState(true);
-  useEffect(() => {
-    if (error) {
-      alert("Error: " + error);
-    }
-  }, [error]);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const handleClick = () => {
-    signIn("credentials", {
-      callbackUrl: "/dashboard",
-      username,
-      password,
-      type: isLoginPage ? "login" : "register",
-    })
-      .then(() => {
-        console.log("signed in");
-      })
-      .catch((e) => {
-        console.log("error", e);
-      });
-  };
+import { redirect } from "next/navigation";
+import { auth } from "./api/auth/[...nextauth]/auth";
+import Header from "./_components/Header";
+import Hero from "./_components/Hero";
+import HeroImg from "./_components/HeroImg";
+const page = async () => {
+  const session = await auth();
+  console.log(session, "session");
+  if (!session) {
+    redirect(
+      "/auth?error=" + JSON.stringify("You must be logged in to view this page")
+    );
+  }
   return (
-    <div
-      className="fccc w-full h-full pi30"
-      style={{ backgroundColor: "transparent" }}
-    >
-      <Logo size={100} />
-      <div className="loginbox fcc">
-        <h2
-          style={{
-            fontSize: 24,
-            fontWeight: 700,
-            textTransform: "uppercase",
-          }}
-        >
-          {isLoginPage ? "Login" : "Register"}
-        </h2>
-        <div className="flex flex-col">
-          <input
-            value={username}
-            onChange={(e) => {
-              setUsername(e.target.value);
-            }}
-            type="email"
-            name=""
-            placeholder="Email ID"
-          />
-          <input
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-            type="password"
-            name=""
-            placeholder="Password"
-          />
-          <button type="button" id="signIn" onClick={handleClick}>
-            {isLoginPage ? "Log In" : "Register"}
-          </button>
-          <button
-            id="signUp"
-            className="mt-5"
-            onClick={() => {
-              setIsLoginPage(!isLoginPage);
-            }}
-          >
-            {isLoginPage
-              ? "Create new acount? Register"
-              : "Already Registered? Login"}
-          </button>
-        </div>
-      </div>
-    </div>
+    <>
+      <Header />
+      <Hero />
+      <HeroImg />
+    </>
   );
-}
+};
+
+export default page;

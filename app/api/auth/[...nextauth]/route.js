@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { url } from "../../../../constants";
 export const authOptions = {
   providers: [
     CredentialsProvider({
@@ -12,7 +13,7 @@ export const authOptions = {
       async authorize(credentials, req) {
         // If no error and we have user data, return it
         const { username, password, type } = credentials;
-        const user = await fetch("" + `/api/db/getUsers/${username?.trim()}`)
+        const user = await fetch(url + `/api/db/getUsers/${username?.trim()}`)
           .then((res) => {
             return res.json();
           })
@@ -24,7 +25,7 @@ export const authOptions = {
             console.log("-- register failed --");
             throw new Error("user already exists");
           }
-          const newUser = await fetch("" + `/api/db/createUser`, {
+          const newUser = await fetch(url + `/api/db/createUser`, {
             method: "POST",
             body: JSON.stringify({ username, password }),
           })

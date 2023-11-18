@@ -2,7 +2,9 @@
 import { signOut } from "next-auth/react";
 const ButtonLogout = () => {
   const handleCLick = () => {
-    signOut();
+    signOut({
+      callbackUrl: "/auth",
+    });
   };
   return (
     <button id="logout" className="btnText" onClick={handleCLick}>
