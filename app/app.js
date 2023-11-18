@@ -21,20 +21,20 @@ const TreasureHunt = () => {
   };
 
   return (
-    <div id="treasure-hunt-container">
-      <button id="generate-clue-button" onClick={generateClue}>
+    <div class="treasure-hunt-container">
+      <button className="generate-button" onClick={generateClue}>
         Generate Clue
       </button>
-      <button id="verify-treasure-button" onClick={verifyTreasure}>
+      <button className="verify-button" onClick={verifyTreasure}>
         Verify Treasure
       </button>
-      <button id="reset-button" onClick={resetGame}>
+      <button className="reset-button" onClick={resetGame}>
         Reset
       </button>
       {clue && (
-        <div id="clue-container">
-          <p id="clue-text">Clue: {clue}</p>
-          <p id="congratulations-text" className={treasureFound ? 'success' : 'hidden'}>
+        <div className="clue-container">
+          <p className="clue-text">Clue: {clue}</p>
+          <p className={`congratulations-text ${treasureFound ? 'success' : 'hidden'}`}>
             Congratulations! Treasure found!
           </p>
         </div>
