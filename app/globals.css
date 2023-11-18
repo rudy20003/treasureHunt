@@ -3,25 +3,100 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --bg: #15111f;
+  --grad: linear-gradient(
+    180deg,
+    #e9a030 36.46%,
+    #fbe7b6 53.65%,
+    #bf671f 70.83%
+  );
+  background-clip: text;
+  --text: #96502c;
+  --lightText: #c19680;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+section {
+  padding-inline: 30px;
+}
+
+.btnText {
+  color: #da9f45;
+  text-shadow: 0.5px 0.5px 0px #55301d;
+  font-family: Oswald;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+button {
+  background: "none";
+}
+
+.btmBorder {
+  border-bottom: 1px solid #2f2830;
+}
+
+h1 {
+  /* text-shadow: 2px 2px 0px #55301d; */
+  font-family: Oswald;
+  font-size: clamp(52px, 7.45vw, 84px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.1;
+  text-transform: uppercase;
+  background: var(--grad);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hr {
+  width: 300px;
+  height: 2px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #fbc869 0%, rgba(251, 200, 105, 0) 100%);
+}
+
+h3 {
+  color: var(--text);
+  font-family: Oswald;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.hover {
+  transition: transform 0.2s ease-in-out;
+}
+.hover:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.hover:active {
+  transform: scale(0.9);
+  cursor: grabbing;
+}
+
+.fcc {
+  @apply flex flex-col items-center;
+}
+.fccc {
+  @apply fcc justify-center;
+}
+
+.gcc {
+  @apply grid items-center justify-center;
 }
