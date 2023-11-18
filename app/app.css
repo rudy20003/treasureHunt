@@ -1,0 +1,168 @@
+div {
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+h2 {
+  color: #333;
+}
+
+button {
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+p {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+}
+
+p.success {
+  color: #008000;
+}
+
+/* TreasureHunt.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+.game-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  max-width: 400px;
+  width: 100%;
+}
+
+h2 {
+  color: #333;
+}
+
+button {
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+p {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+}
+
+p.success {
+  color: #008000;
+}
+
+@media screen and (max-width: 480px) {
+  .game-container {
+    margin: 10px;
+  }
+}
+
+/* styles.css */
+
+/* ... (previous styles) */
+
+#reset-button {
+  padding: 12px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  background-color: #e74c3c;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#reset-button:hover {
+  background-color: #c0392b;
+}
+
+.hidden {
+  display: none;
+}
+
+/* styles.css */
+
+/* styles.css */
+
+#generate-clue-button,
+#verify-treasure-button,
+#reset-button {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  margin: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#generate-clue-button:hover,
+#verify-treasure-button:hover,
+#reset-button:hover {
+  transform: scale(1.05);
+}
+
+#generate-clue-button,
+#verify-treasure-button,
+#reset-button {
+  padding: 12px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  margin: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#generate-clue-button:hover,
+#verify-treasure-button:hover,
+#reset-button:hover {
+  transform: scale(1.05);
+}
+
+#generate-clue-button:active,
+#verify-treasure-button:active,
+#reset-button:active {
+  transform: scale(0.95); /* Adjust the scale for the smaller size on click */
+}
