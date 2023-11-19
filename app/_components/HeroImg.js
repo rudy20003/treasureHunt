@@ -11,6 +11,7 @@ const HeroImg = () => {
           alt="start game"
           style={{ objectFit: "contain" }}
           fill
+          priority={true}
         />
         <BtnStartGame />
       </section>

@@ -26,6 +26,7 @@ const BtnStartGame = () => {
             alt="start game"
             style={{ objectFit: "contain" }}
             fill
+            priority={true}
           />
         </Link>
       </button>

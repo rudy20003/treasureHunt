@@ -5,7 +5,13 @@ const Logo = ({ size = 55 }) => {
   return (
     <>
       <Link href={"/"} className="hover">
-        <Image src={"/logo.png"} alt="logo" width={size} height={size} />
+        <Image
+          src={"/logo.png"}
+          alt="logo"
+          width={size}
+          height={size}
+          priority={true}
+        />
       </Link>
     </>
   );
