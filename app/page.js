@@ -6,11 +6,11 @@ import HeroImg from "./_components/HeroImg";
 const page = async () => {
   const session = await auth();
   console.log(session, "session");
-  if (!session) {
-    redirect(
-      "/auth?error=" + JSON.stringify("You must be logged in to view this page")
-    );
-  }
+  // if (!session) {
+  //   redirect(
+  //     "/auth?error=" + JSON.stringify("You must be logged in to view this page")
+  //   );
+  // }
   return (
     <>
       <Header />

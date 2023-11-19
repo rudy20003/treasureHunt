@@ -1,8 +1,19 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import useSound from "./useSound";
+import { useEffect } from "react";
 
 const BtnStartGame = () => {
+  // const bgMusic = useSound("bg");
+  // useEffect(() => {
+  //   window.addEventListener("click", () => {
+  //     bgMusic.play();
+  //   });
+  //   return () => {
+  //     bgMusic.pause();
+  //   };
+  // }, [window]);
   return (
     <>
       <button

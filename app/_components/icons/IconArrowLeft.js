@@ -1,9 +1,14 @@
 import Icon from "./Icon";
 
-const IconArrowLeft = () => {
+const IconArrowLeft = ({ height, width, onClick }) => {
   return (
     <>
-      <Icon iconName="arrowLeft" height={27} width={73} />
+      <Icon
+        onClick={onClick}
+        iconName="arrowLeft"
+        height={height || 27}
+        width={width || 73}
+      />
     </>
   );
 };

@@ -31,13 +31,11 @@ export const authOptions = {
           })
             .then((res) => {
               alert("User registered successfully 👍! Please login");
-              return res.json();
             })
             .catch((e) => {
               console.log(e, "error in authorize");
             });
-
-          throw new Error("User registered successfully 👍! Please login");
+          return;
         }
         console.log(user, "user");
         if (user && user.password === password) {
@@ -77,8 +75,8 @@ export const authOptions = {
   },
   pages: {
     signIn: "/",
-    error: "/",
-    signOut: "/",
+    error: "/auth",
+    signOut: "/auth",
   },
 };
 const handler = NextAuth(authOptions);

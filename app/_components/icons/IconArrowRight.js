@@ -1,11 +1,11 @@
 import Icon from "./Icon";
 
-const IconArrowLeft = () => {
+const IconArrowRight = ({ height, width }) => {
   return (
     <>
-      <Icon iconName="arrowRight" height={27} width={73} />
+      <Icon iconName="arrowRight" height={height || 27} width={width || 73} />
     </>
   );
 };
 
-export default IconArrowLeft;
+export default IconArrowRight;
