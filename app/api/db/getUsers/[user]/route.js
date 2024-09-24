@@ -1,15 +1,15 @@
-import prisma from "../../../../../prisma/prismaClient";
+// import prisma from "../../../../../prisma/prismaClient";
 
 async function handler(req, { params }) {
-  const { user } = params;
-  const u = await prisma.users.findUnique({
-    where: {
-      username: user,
-    },
-  });
-  console.log("IN DB GET USER HANDLER", u);
+  // const { user } = params;
+  // const u = await prisma.users.findUnique({
+  //   where: {
+  //     username: user,
+  //   },
+  // });
+  // console.log("IN DB GET USER HANDLER", u);
 
-  return new Response(JSON.stringify(u));
+  return new Response(JSON.stringify("hello"));
 }
 
 export { handler as GET };
