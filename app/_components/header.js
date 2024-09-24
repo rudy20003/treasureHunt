@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <section className="flex items-center justify-between py-2 btmBorder">
       <Logo />
-      <ButtonLogout />
+      {/* <ButtonLogout /> */}
     </section>
   );
 };
